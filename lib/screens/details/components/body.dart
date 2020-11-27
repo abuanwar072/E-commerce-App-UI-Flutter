@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: size.height * 0.3),
+                  margin: EdgeInsets.only(top: size.height * 0.4),
                   padding: EdgeInsets.only(
                     top: size.height * 0.12,
                     left: kDefaultPaddin,

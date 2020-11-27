@@ -4,11 +4,14 @@ import 'package:shop_app/constants.dart';
 import 'package:shop_app/screens/home/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
+  List<dynamic> ProductList;
+  HomeScreen({this.ProductList});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(),
+      body: Body(ProductList: ProductList),
     );
   }
 

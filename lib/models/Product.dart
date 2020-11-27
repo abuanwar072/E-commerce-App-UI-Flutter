@@ -1,13 +1,18 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 class Product {
-  final String image, title, description;
+  final String title, description,category;
+  Uint8List image;
   final int price, size, id;
   final Color color;
   Product({
     this.id,
     this.image,
     this.title,
+    this.category,
     this.price,
     this.description,
     this.size,
@@ -15,7 +20,7 @@ class Product {
   });
 }
 
-List<Product> products = [
+/*List<Product> products = [
   Product(
       id: 1,
       title: "Office Code",
@@ -65,7 +70,7 @@ List<Product> products = [
     image: "assets/images/bag_6.png",
     color: Color(0xFFAEAEAE),
   ),
-];
+];*/
 
 String dummyText =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";

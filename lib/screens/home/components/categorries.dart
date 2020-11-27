@@ -5,12 +5,20 @@ import '../../../constants.dart';
 // We need satefull widget for our categories
 
 class Categories extends StatefulWidget {
+  final List<String> Clist;
+  final Function(String) onCategoryChange;
+  Categories({@required this.Clist, @required this.onCategoryChange});
+
+
   @override
-  _CategoriesState createState() => _CategoriesState();
+  _CategoriesState createState() => _CategoriesState(Clist: Clist,onCategoryChange:(value){onCategoryChange(value);});
 }
 
 class _CategoriesState extends State<Categories> {
-  List<String> categories = ["Hand bag", "Jewellery", "Footwear", "Dresses"];
+  List<String> Clist;
+  Function(String) onCategoryChange;
+  _CategoriesState({this.Clist,this.onCategoryChange});
+ 
   // By default our first item will be selected
   int selectedIndex = 0;
   @override
@@ -21,7 +29,7 @@ class _CategoriesState extends State<Categories> {
         height: 25,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: categories.length,
+          itemCount: Clist.length,
           itemBuilder: (context, index) => buildCategory(index),
         ),
       ),
@@ -33,6 +41,7 @@ class _CategoriesState extends State<Categories> {
       onTap: () {
         setState(() {
           selectedIndex = index;
+          onCategoryChange(Clist[index]);
         });
       },
       child: Padding(
@@ -41,7 +50,7 @@ class _CategoriesState extends State<Categories> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              categories[index],
+              Clist[index],
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: selectedIndex == index ? kTextColor : kTextLightColor,
