@@ -43,5 +43,20 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <provider
+            android:authorities="${applicationId}.com.microsoft.engagementinsights.AnalyticsContentProvider"
+            android:name="com.microsoft.engagementinsights.AnalyticsContentProvider" />
+        <meta-data
+            android:name="com.microsoft.engagementinsights.ingestionKey"
+            android:value="7c8de63655794cad83c9c51e0dca93b9-baf7c8e2-5b50-4b7b-a9d3-2e4fab80ed79-6902" />
+        <meta-data
+            android:name="com.microsoft.engagementinsights.autoCapture"
+            android:value="true" />
+        <meta-data
+            android:name="com.microsoft.engagementinsights.endpointUrl"
+            android:value="https://self.pipe.aria.int.microsoft.com/OneCollector/1.0" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
