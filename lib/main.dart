@@ -16,6 +16,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        appBarTheme: AppBarTheme.of(context).copyWith(
+          backgroundColor: Color(0xFFFEFEFE)
+        )
+      ),
+      highContrastTheme: ThemeData.dark().copyWith(
+        appBarTheme: AppBarTheme.of(context).copyWith(
+          backgroundColor: Color(0xFF303030)
+        ),
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kHighContrastTextLightColor),
       ),
       home: HomeScreen(),
     );
