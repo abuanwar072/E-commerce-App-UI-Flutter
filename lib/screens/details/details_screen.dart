@@ -20,7 +20,7 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: product.color,
+      backgroundColor: MediaQuery.of(context).highContrast ? Theme.of(context).appBarTheme.backgroundColor : product.color,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

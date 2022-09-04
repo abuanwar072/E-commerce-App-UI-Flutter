@@ -13,13 +13,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      theme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme.of(context).copyWith(
-          backgroundColor: Color(0xFFFEFEFE)
-        )
+          backgroundColor: Color(0xFF303030)
+        ),
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kHighContrastTextLightColor),
       ),
+      // ThemeData(
+      //   textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      //   appBarTheme: AppBarTheme.of(context).copyWith(
+      //     backgroundColor: Color(0xFFFEFEFE)
+      //   )
+      // ),
       highContrastTheme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme.of(context).copyWith(
           backgroundColor: Color(0xFF303030)
