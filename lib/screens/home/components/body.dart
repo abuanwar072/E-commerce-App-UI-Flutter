@@ -42,8 +42,10 @@ class Body extends StatelessWidget {
                             builder: (context) => DetailsScreen(
                               product: products[index],
                             ),
-                          )),
-                    )),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ],
