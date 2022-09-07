@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/Product.dart';
 
@@ -19,40 +20,59 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: size.height,
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: size.height * 0.3),
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.12,
-                    left: kDefaultPaddin,
-                    right: kDefaultPaddin,
-                  ),
-                  // height: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                    ),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      ColorAndSize(product: product),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      Description(product: product),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      CounterWithFavBtn(),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      AddToCart(product: product)
-                    ],
+          Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: size.height * 0.3),
+                padding: EdgeInsets.only(
+                  top: size.height * 0.12,
+                  left: kDefaultPaddin,
+                  right: kDefaultPaddin,
+                ),
+                // height: 500,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24),
                   ),
                 ),
-                ProductTitleWithImage(product: product)
-              ],
-            ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Price\n",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                .copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(
+                            text: "\$${product.price}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline4
+                                .copyWith(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: kDefaultPaddin / 2),
+                    ColorAndSize(product: product),
+                    SizedBox(height: kDefaultPaddin / 2),
+                    Description(product: product),
+                    SizedBox(height: kDefaultPaddin / 2),
+                    CounterWithFavBtn(),
+                    SizedBox(height: kDefaultPaddin / 2),
+                    AddToCart(product: product)
+                  ],
+                ),
+              ),
+              ProductTitleWithImage(product: product)
+            ],
           )
         ],
       ),

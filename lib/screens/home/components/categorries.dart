@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -15,10 +17,16 @@ class _CategoriesState extends State<Categories> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+
+    double textHeight = _textSize(
+        categories.first,
+        Theme.of(context).textTheme.bodyLarge,
+        MediaQuery.textScaleFactorOf(context));
+        
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: SizedBox(
-        height: 25,
+        height: textHeight + kDefaultPaddin / 4 + 2,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -42,10 +50,11 @@ class _CategoriesState extends State<Categories> {
           children: <Widget>[
             Text(
               categories[index],
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: selectedIndex == index ? kTextColor : kTextLightColor,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color:
+                        selectedIndex == index ? kTextColor : kTextLightColor,
+                  ),
             ),
             Container(
               margin: EdgeInsets.only(top: kDefaultPaddin / 4), //top padding 5
@@ -57,5 +66,17 @@ class _CategoriesState extends State<Categories> {
         ),
       ),
     );
+  }
+
+  // Here it is!
+  double _textSize(String text, TextStyle style, double textScaleFactor) {
+    final TextPainter textPainter = TextPainter(
+        text: TextSpan(text: text, style: style),
+        maxLines: 1,
+        textScaleFactor: textScaleFactor,
+        textDirection: TextDirection.ltr)
+      ..layout(minWidth: 0, maxWidth: double.infinity);
+
+    return textPainter.height;
   }
 }
