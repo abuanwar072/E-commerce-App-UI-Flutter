@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color(0xFF303030),
         colorScheme: ColorScheme.dark(),
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kHighContrastTextLightColor),
-        primaryColorDark: Color(0xFF000000),
+        primaryColorDark: Color(0xFF1A1616),
+        primaryColorLight: Color(0xFFFEFEFE),
       ),
       home: HomeScreen(),
     );

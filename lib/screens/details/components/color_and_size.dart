@@ -38,13 +38,20 @@ class ColorAndSize extends StatelessWidget {
             text: TextSpan(
               style: TextStyle(color: kTextColor),
               children: [
-                TextSpan(text: "Size\n"),
+                TextSpan(
+                  text: "Size\n",
+                  style: TextStyle(
+                    color: MediaQuery.of(context).highContrast ? kHighContrastTextLightColor : kTextColor,
+                  ),
+                ),
                 TextSpan(
                   text: "${product.size} cm",
                   style: Theme.of(context)
                       .textTheme
                       .headline5
-                      .copyWith(fontWeight: FontWeight.bold),
+                      .copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 )
               ],
             ),

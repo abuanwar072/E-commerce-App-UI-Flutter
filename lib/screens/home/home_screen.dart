@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
+        color: MediaQuery.of(context).highContrast ? Colors.white : Colors.black,
         onPressed: () {},
       ),
       actions: <Widget>[
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           icon: SvgPicture.asset(
             "assets/icons/search.svg",
             // By default our  icon color is white
-            color: kTextColor,
+            color: MediaQuery.of(context).highContrast ? Colors.white : Colors.black,
           ),
           onPressed: () {},
         ),
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           icon: SvgPicture.asset(
             "assets/icons/cart.svg",
             // By default our  icon color is white
-            color: kTextColor,
+            color: MediaQuery.of(context).highContrast ? Colors.white : Colors.black,
           ),
           onPressed: () {},
         ),
