@@ -33,7 +33,7 @@ class ProductTitleWithImage extends StatelessWidget {
           Center(
             child: SizedBox(
               width: double.infinity,
-              height: 275,
+              height: MediaQuery.of(context).size.height * 0.25,
               child: Hero(
                 tag: "${product.id}",
                 child: Image.asset(

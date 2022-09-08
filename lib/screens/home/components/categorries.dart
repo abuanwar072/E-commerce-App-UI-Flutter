@@ -53,14 +53,14 @@ class _CategoriesState extends State<Categories> {
               style: Theme.of(context).textTheme.bodyLarge.copyWith(
                     fontWeight: FontWeight.bold,
                     color:
-                        selectedIndex == index ? kTextColor : kTextLightColor,
+                        selectedIndex == index ? kTextLightColor : (MediaQuery.of(context).highContrast ? kHighContrastTextLightColor : kTextLightColor),
                   ),
             ),
             Container(
               margin: EdgeInsets.only(top: kDefaultPaddin / 4), //top padding 5
               height: 2,
               width: 30,
-              color: selectedIndex == index ? Colors.black : Colors.transparent,
+              color: selectedIndex == index ? (MediaQuery.of(context).highContrast ? kHighContrastTextLightColor : Colors.black) : Colors.transparent,
             )
           ],
         ),

@@ -25,13 +25,13 @@ class AddToCart extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
-                color: product.color,
+                color: MediaQuery.of(context).highContrast ? Theme.of(context).primaryColorLight : product.color,
               ),
             ),
             child: IconButton(
               icon: SvgPicture.asset(
                 "assets/icons/add_to_cart.svg",
-                color: product.color,
+                color: MediaQuery.of(context).highContrast ? Theme.of(context).primaryColorLight : product.color,
               ),
               onPressed: () {},
             ),
@@ -43,7 +43,7 @@ class AddToCart extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(
-                    color: product.color,
+                    color: MediaQuery.of(context).highContrast ? Theme.of(context).primaryColorLight : product.color,
                   ),
                 ),
                 child: TextButton(
@@ -56,9 +56,9 @@ class AddToCart extends StatelessWidget {
                   child: Text(
                     "Buy  Now".toUpperCase(),
                     style: Theme.of(context).textTheme.bodyLarge.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: product.color,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      color: MediaQuery.of(context).highContrast ? Theme.of(context).primaryColorLight : product.color,
+                    ),
                   ),
                 ),
               ),

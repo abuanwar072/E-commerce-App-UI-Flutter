@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
                 ),
                 // height: 500,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: MediaQuery.of(context).highContrast ? Theme.of(context).primaryColorDark : Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(24),
                     topRight: Radius.circular(24),
@@ -48,14 +48,20 @@ class Body extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall
-                                .copyWith(fontWeight: FontWeight.bold),
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: MediaQuery.of(context).highContrast ? kHighContrastTextLightColor : kTextColor
+                                ),
                           ),
                           TextSpan(
                             text: "\$${product.price}",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline4
-                                .copyWith(fontWeight: FontWeight.bold),
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: MediaQuery.of(context).highContrast ? kHighContrastTextLightColor : kTextColor,
+                                ),
                           ),
                         ],
                       ),

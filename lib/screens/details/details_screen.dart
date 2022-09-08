@@ -12,7 +12,7 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // each product have a color
-      backgroundColor: product.color,
+      backgroundColor: MediaQuery.of(context).highContrast ? Theme.of(context).backgroundColor : product.color,
       appBar: buildAppBar(context),
       body: Body(product: product),
     );
@@ -20,7 +20,7 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: product.color,
+      backgroundColor: MediaQuery.of(context).highContrast ? Theme.of(context).backgroundColor : product.color,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
