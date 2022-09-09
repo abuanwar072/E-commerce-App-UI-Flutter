@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/image/image_screen.dart';
 
 import '../../../constants.dart';
 
@@ -36,9 +37,19 @@ class ProductTitleWithImage extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.25,
               child: Hero(
                 tag: "${product.id}",
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.fitHeight,
+                child: GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImageScreen(
+                        product: this.product,
+                      ),
+                    ),
+                  ),
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
             ),
