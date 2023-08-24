@@ -4,13 +4,10 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 
 class ItemCard extends StatelessWidget {
+  const ItemCard({super.key, required this.product, required this.press});
+
   final Product product;
-  final Function press;
-  const ItemCard({
-    Key key,
-    this.product,
-    this.press,
-  }) : super(key: key);
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +19,6 @@ class ItemCard extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.all(kDefaultPaddin),
-              // For  demo we use fixed height  and width
-              // Now we dont need them
-              // height: 180,
-              // width: 160,
               decoration: BoxDecoration(
                 color: product.color,
                 borderRadius: BorderRadius.circular(16),

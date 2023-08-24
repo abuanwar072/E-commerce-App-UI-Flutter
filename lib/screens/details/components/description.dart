@@ -4,13 +4,9 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 
 class Description extends StatelessWidget {
-  const Description({
-    Key key,
-    @required this.product,
-  }) : super(key: key);
+  const Description({super.key, required this.product});
 
   final Product product;
-
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -4,13 +4,9 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
-  const ProductTitleWithImage({
-    Key key,
-    @required this.product,
-  }) : super(key: key);
+  const ProductTitleWithImage({super.key, required this.product});
 
   final Product product;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,7 +22,7 @@ class ProductTitleWithImage extends StatelessWidget {
             product.title,
             style: Theme.of(context)
                 .textTheme
-                .headline4
+                .titleLarge!
                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: kDefaultPaddin),
@@ -38,8 +34,11 @@ class ProductTitleWithImage extends StatelessWidget {
                     TextSpan(text: "Price\n"),
                     TextSpan(
                       text: "\$${product.price}",
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(
+                              color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

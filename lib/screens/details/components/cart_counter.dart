@@ -13,49 +13,55 @@ class _CartCounterState extends State<CartCounter> {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        buildOutlineButton(
-          icon: Icons.remove,
-          press: () {
-            if (numOfItems > 1) {
+        SizedBox(
+          width: 40,
+          height: 32,
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              padding: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(13),
+              ),
+            ),
+            onPressed: () {
               setState(() {
-                numOfItems--;
+                if (numOfItems > 1) {
+                  setState(() {
+                    numOfItems--;
+                  });
+                }
               });
-            }
-          },
+            },
+            child: Icon(Icons.remove),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
           child: Text(
             // if our item is less  then 10 then  it shows 01 02 like that
             numOfItems.toString().padLeft(2, "0"),
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
-        buildOutlineButton(
-            icon: Icons.add,
-            press: () {
+        SizedBox(
+          width: 40,
+          height: 32,
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              padding: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(13),
+              ),
+            ),
+            onPressed: () {
               setState(() {
                 numOfItems++;
               });
-            }),
-      ],
-    );
-  }
-
-  SizedBox buildOutlineButton({IconData icon, Function press}) {
-    return SizedBox(
-      width: 40,
-      height: 32,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          padding: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(13),
+            },
+            child: Icon(Icons.add),
           ),
         ),
-        onPressed: press,
-        child: Icon(icon),
-      ),
+      ],
     );
   }
 }

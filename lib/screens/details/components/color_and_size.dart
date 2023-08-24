@@ -4,13 +4,9 @@ import 'package:shop_app/models/Product.dart';
 import '../../../constants.dart';
 
 class ColorAndSize extends StatelessWidget {
-  const ColorAndSize({
-    Key key,
-    @required this.product,
-  }) : super(key: key);
+  const ColorAndSize({super.key, required this.product});
 
   final Product product;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,8 +22,11 @@ class ColorAndSize extends StatelessWidget {
                     color: Color(0xFF356C95),
                     isSelected: true,
                   ),
-                  ColorDot(color: Color(0xFFF8C078)),
-                  ColorDot(color: Color(0xFFA29B9B)),
+                  ColorDot(
+                    color: Color(0xFFF8C078),
+                    isSelected: true,
+                  ),
+                  ColorDot(color: Color(0xFFA29B9B), isSelected: false),
                 ],
               ),
             ],
@@ -43,7 +42,7 @@ class ColorAndSize extends StatelessWidget {
                   text: "${product.size} cm",
                   style: Theme.of(context)
                       .textTheme
-                      .headline5
+                      .titleLarge!
                       .copyWith(fontWeight: FontWeight.bold),
                 )
               ],
@@ -56,15 +55,10 @@ class ColorAndSize extends StatelessWidget {
 }
 
 class ColorDot extends StatelessWidget {
+  const ColorDot({super.key, required this.color, required this.isSelected});
+
   final Color color;
   final bool isSelected;
-  const ColorDot({
-    Key key,
-    this.color,
-    // by default isSelected is false
-    this.isSelected = false,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
