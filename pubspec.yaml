@@ -28,6 +28,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   flutter_svg: ^2.0.7 # it help us to use SVG in our app
+  device_preview:
+    git:
+      url: https://github.com/abuanwar072/device_preview.git
 
 dev_dependencies:
   flutter_test:
