@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Product.dart';
 
 import '../../../constants.dart';
+import '../../../models/product.dart';
 
 class Description extends StatelessWidget {
   const Description({super.key, required this.product});
@@ -13,7 +13,7 @@ class Description extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: Text(
         product.description,
-        style: TextStyle(height: 1.5),
+        style: const TextStyle(height: 1.5),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Product.dart';
 
 import '../../../constants.dart';
+import '../../../models/product.dart';
 
 class ColorAndSize extends StatelessWidget {
   const ColorAndSize({super.key, required this.product});
@@ -11,7 +11,7 @@ class ColorAndSize extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Expanded(
+        const Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -35,9 +35,9 @@ class ColorAndSize extends StatelessWidget {
         Expanded(
           child: RichText(
             text: TextSpan(
-              style: TextStyle(color: kTextColor),
+              style: const TextStyle(color: kTextColor),
               children: [
-                TextSpan(text: "Size\n"),
+                const TextSpan(text: "Size\n"),
                 TextSpan(
                   text: "${product.size} cm",
                   style: Theme.of(context)
@@ -62,11 +62,11 @@ class ColorDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: kDefaultPaddin / 4,
         right: kDefaultPaddin / 2,
       ),
-      padding: EdgeInsets.all(2.5),
+      padding: const EdgeInsets.all(2.5),
       height: 24,
       width: 24,
       decoration: BoxDecoration(

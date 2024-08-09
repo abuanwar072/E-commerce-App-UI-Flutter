@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/Product.dart';
 
+import '../../constants.dart';
+import '../../models/product.dart';
 import 'components/add_to_cart.dart';
 import 'components/color_and_size.dart';
 import 'components/counter_with_fav_btn.dart';
@@ -26,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
         leading: IconButton(
           icon: SvgPicture.asset(
             'assets/icons/back.svg',
-            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -39,7 +39,7 @@ class DetailsScreen extends StatelessWidget {
             icon: SvgPicture.asset("assets/icons/cart.svg"),
             onPressed: () {},
           ),
-          SizedBox(width: kDefaultPaddin / 2)
+          const SizedBox(width: kDefaultPaddin / 2)
         ],
       ),
       body: SingleChildScrollView(
@@ -57,7 +57,7 @@ class DetailsScreen extends StatelessWidget {
                       right: kDefaultPaddin,
                     ),
                     // height: 500,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(24),
@@ -67,11 +67,11 @@ class DetailsScreen extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         ColorAndSize(product: product),
-                        SizedBox(height: kDefaultPaddin / 2),
+                        const SizedBox(height: kDefaultPaddin / 2),
                         Description(product: product),
-                        SizedBox(height: kDefaultPaddin / 2),
-                        CounterWithFavBtn(),
-                        SizedBox(height: kDefaultPaddin / 2),
+                        const SizedBox(height: kDefaultPaddin / 2),
+                        const CounterWithFavBtn(),
+                        const SizedBox(height: kDefaultPaddin / 2),
                         AddToCart(product: product)
                       ],
                     ),

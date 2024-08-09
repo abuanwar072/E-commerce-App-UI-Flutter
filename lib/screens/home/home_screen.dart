@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_app/constants.dart';
+import '../../constants.dart';
 
-import '../../models/Product.dart';
+import '../../models/product.dart';
 import '../details/details_screen.dart';
 import 'components/categorries.dart';
 import 'components/item_card.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +24,18 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: SvgPicture.asset(
               "assets/icons/search.svg",
-              colorFilter: ColorFilter.mode(kTextColor, BlendMode.srcIn),
+              colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
             ),
             onPressed: () {},
           ),
           IconButton(
             icon: SvgPicture.asset(
               "assets/icons/cart.svg",
-              colorFilter: ColorFilter.mode(kTextColor, BlendMode.srcIn),
+              colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
             ),
             onPressed: () {},
           ),
-          SizedBox(width: kDefaultPaddin / 2)
+          const SizedBox(width: kDefaultPaddin / 2)
         ],
       ),
       body: Column(
@@ -49,13 +51,13 @@ class HomeScreen extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
-          Categories(),
+          const Categories(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
               child: GridView.builder(
                 itemCount: products.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: kDefaultPaddin,
                   crossAxisSpacing: kDefaultPaddin,
