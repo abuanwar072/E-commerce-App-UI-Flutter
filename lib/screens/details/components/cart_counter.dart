@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class CartCounter extends StatefulWidget {
+  const CartCounter({super.key});
+
   @override
-  _CartCounterState createState() => _CartCounterState();
+  State<CartCounter> createState() => _CartCounterState();
 }
 
 class _CartCounterState extends State<CartCounter> {
@@ -32,7 +34,7 @@ class _CartCounterState extends State<CartCounter> {
                 }
               });
             },
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
         ),
         Padding(
@@ -58,7 +60,7 @@ class _CartCounterState extends State<CartCounter> {
                 numOfItems++;
               });
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ),
       ],

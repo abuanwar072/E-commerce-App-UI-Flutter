@@ -5,8 +5,10 @@ import '../../../constants.dart';
 // We need satefull widget for our categories
 
 class Categories extends StatefulWidget {
+  const Categories({super.key});
+
   @override
-  _CategoriesState createState() => _CategoriesState();
+  State<Categories> createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
@@ -48,7 +50,9 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: kDefaultPaddin / 4), //top padding 5
+              margin: const EdgeInsets.only(
+                top: kDefaultPaddin / 8,
+              ), //top padding 5
               height: 2,
               width: 30,
               color: selectedIndex == index ? Colors.black : Colors.transparent,
