@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../constants.dart';
-import '../../models/product.dart';
+import '../../models/product_model.dart';
 import 'components/add_to_cart.dart';
 import 'components/color_and_size.dart';
 import 'components/counter_with_fav_btn.dart';
