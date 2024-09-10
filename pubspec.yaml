@@ -78,6 +78,6 @@ patrol:
   android:
     package_name: com.example.shop_app
   ios:
-    bundle_id: com.example.shop_app
+    bundle_id: com.example.shopApp
   macos:
-    bundle_id: com.example.shop_app
+    bundle_id: com.example.shopApp
