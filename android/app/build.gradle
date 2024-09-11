@@ -25,7 +25,8 @@ if (flutterVersionName == null) {
 android {
     namespace "com.example.shop_app"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    //ndkVersion flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,6 +50,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        testInstrumentationRunner "pl.leancode.patrol.PatrolJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: "true"
+
     }
 
     buildTypes {
@@ -58,10 +62,18 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    testOptions {
+        execution "ANDROIDX_TEST_ORCHESTRATOR"
+    }
+
 }
 
 flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+      androidTestUtil "androidx.test:orchestrator:1.4.2"
+
+}

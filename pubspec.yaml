@@ -33,6 +33,7 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+  patrol: ^3.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -72,3 +73,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+patrol:
+  app_name: shop_app
+  android:
+    package_name: com.example.shop_app
+  ios:
+    bundle_id: com.example.shopApp
+  macos:
+    bundle_id: com.example.shopApp
